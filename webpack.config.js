@@ -11,7 +11,15 @@ module.exports = {
   plugins: [new HtmlWebpackPlugin(
     {title: 'My App111',
     template: 'src/assets/index.html'}
-  )]
+  )],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
 };
 
 

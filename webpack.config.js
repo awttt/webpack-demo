@@ -1,9 +1,20 @@
 var path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 
 module.exports = {
   mode: 'development',
   entry: './src/index.js',
   output: {
-    filename: '[name].[contenthash].js'
-  }
+    filename: 'index.[contenthash].js'
+  },
+  plugins: [new HtmlWebpackPlugin(
+    {title: 'My App111',
+    template: 'src/assets/index.html'}
+  )]
 };
+
+
+
+
+
